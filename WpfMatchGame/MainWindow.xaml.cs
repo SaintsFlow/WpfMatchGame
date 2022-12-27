@@ -20,9 +20,32 @@ namespace WpfMatchGame
     /// </summary>
     public partial class MainWindow : Window
     {
+        private void SetUpGame()
+        {
+            List<string> textBlockContent = new List<string>
+            {
+                "a","a",
+                "b","b",
+                "c","c",
+                "d","d",
+                "e","e",
+                "f","f",
+                "g","g",
+                "h","h",
+            };
+
+            Random rand = new Random();
+            foreach (TextBlock textBlock in Grid.Children.OfType<TextBlock>())
+            {
+                int index = rand.Next(textBlockContent.Count);
+                textBlock.Text = textBlockContent[index];
+                textBlockContent.RemoveAt(index);
+            }
+        }
         public MainWindow()
         {
             InitializeComponent();
+            SetUpGame();
         }
     }
 }

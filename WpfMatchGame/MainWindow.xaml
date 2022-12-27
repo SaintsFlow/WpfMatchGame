@@ -5,8 +5,41 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfMatchGame"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="My first WPF app" Height="600" Width="600" ResizeMode="NoResize">
+    <Grid Name="Grid">
 
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="150"/>
+        </Grid.ColumnDefinitions>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="150"/>
+            <RowDefinition Height="150"/>
+            <RowDefinition Height="150"/>
+            <RowDefinition Height="150"/>
+        </Grid.RowDefinitions>
+        
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="?" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" TextWrapping="Wrap"/>
+        <TextBlock Grid.Row="0" Grid.Column="1" Text="?" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" TextWrapping="Wrap"/>
+        <TextBlock Grid.Row="0" Grid.Column="2" Text="?" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" TextWrapping="Wrap"/>
+        <TextBlock Grid.Row="0" Grid.Column="3" Text="?" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" TextWrapping="Wrap"/>
+        
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="?" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" TextWrapping="Wrap"/>
+        <TextBlock Grid.Row="1" Grid.Column="1" Text="?" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" TextWrapping="Wrap"/>
+        <TextBlock Grid.Row="1" Grid.Column="2" Text="?" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" TextWrapping="Wrap"/>
+        <TextBlock Grid.Row="1" Grid.Column="3" Text="?" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" TextWrapping="Wrap"/>
+        
+        <TextBlock Grid.Row="2" Grid.Column="0" Text="?" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" TextWrapping="Wrap"/>
+        <TextBlock Grid.Row="2" Grid.Column="1" Text="?" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" TextWrapping="Wrap"/>
+        <TextBlock Grid.Row="2" Grid.Column="2" Text="?" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" TextWrapping="Wrap"/>
+        <TextBlock Grid.Row="2" Grid.Column="3" Text="?" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" TextWrapping="Wrap"/>
+        
+        <TextBlock Grid.Row="3" Grid.Column="0" Text="?" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" TextWrapping="Wrap"/>
+        <TextBlock Grid.Row="3" Grid.Column="1" Text="?" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" TextWrapping="Wrap"/>
+        <TextBlock Grid.Row="3" Grid.Column="2" Text="?" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" TextWrapping="Wrap"/>
+        <TextBlock Grid.Row="3" Grid.Column="3" Text="?" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" TextWrapping="Wrap"/>
     </Grid>
 </Window>
