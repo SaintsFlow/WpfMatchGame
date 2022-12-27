@@ -1,17 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace WpfMatchGame
 {
@@ -20,18 +12,27 @@ namespace WpfMatchGame
     /// </summary>
     public partial class MainWindow : Window
     {
+        private bool isSearching;
+        private TextBlock lastTextBlockClicked;
+
+        public MainWindow()
+        {
+            InitializeComponent();
+            SetUpGame();
+        }
+
         private void SetUpGame()
         {
             List<string> textBlockContent = new List<string>
             {
-                "a","a",
-                "b","b",
-                "c","c",
-                "d","d",
-                "e","e",
-                "f","f",
-                "g","g",
-                "h","h",
+                "a", "a",
+                "b", "b",
+                "c", "c",
+                "d", "d",
+                "e", "e",
+                "f", "f",
+                "g", "g",
+                "h", "h",
             };
 
             Random rand = new Random();
@@ -42,10 +43,28 @@ namespace WpfMatchGame
                 textBlockContent.RemoveAt(index);
             }
         }
-        public MainWindow()
+
+        private void TextBlock_OnMouseDown(object sender, MouseButtonEventArgs e)
         {
-            InitializeComponent();
-            SetUpGame();
+            TextBlock currentTextBlock = sender as TextBlock;
+
+            if (!isSearching)
+            {
+                currentTextBlock.Visibility = Visibility.Hidden;
+                lastTextBlockClicked = currentTextBlock;
+                isSearching = true;
+            }
+            else if (currentTextBlock.Text == lastTextBlockClicked.Text)
+            {
+                currentTextBlock.Visibility = Visibility.Hidden;
+                isSearching = false;
+            }
+            else
+            {
+                lastTextBlockClicked.Visibility = Visibility.Visible;
+                isSearching = false;
+            }
+
         }
     }
 }
