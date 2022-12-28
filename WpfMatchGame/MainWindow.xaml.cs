@@ -52,7 +52,7 @@ namespace WpfMatchGame
             Random rand = new Random();
             foreach (TextBlock textBlock in Grid.Children.OfType<TextBlock>())
             {
-                if(textBlock.Name == "TimerTextBlock")
+                if(textBlock.Name == "TimerTextBlock" || textBlock.Name == "TextBlockInstruction")
                     continue;
                 int index = rand.Next(textBlockContent.Count);
                 textBlock.Text = textBlockContent[index];
